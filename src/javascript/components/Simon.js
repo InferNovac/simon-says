@@ -2,8 +2,8 @@ import {
     GLOBAL_DATA,
     BUTTONS_SIZE,
     FLASH_DELAY,
-    REAPPEAR_DELAY,
     FLASH_COLOR,
+    REAPPEAR_DELAY,
 } from "./Constant";
 import { flash } from "./Buttons";
 
@@ -23,6 +23,5 @@ export const simonSays = () => {
     const { computer } = GLOBAL_DATA;
     const simonsOrder = Math.floor(Math.random() * BUTTONS_SIZE);
     GLOBAL_DATA.computer = [...computer, simonsOrder];
+    console.log(GLOBAL_DATA);
 };
-
-export const checkPlayerSequence = () => {};
