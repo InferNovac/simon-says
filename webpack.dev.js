@@ -18,6 +18,7 @@ module.exports = merge(common, {
         ],
     },
     devServer: {
+		disableHostCheck: true,
         contentBase: path.resolve(__dirname, "build"),
     },
 });

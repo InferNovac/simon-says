@@ -4,20 +4,28 @@
         <title>Simon Says</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
-        <div class="center" id="inject">
+        <div id="start-screen" class="center">
             <div>
+                <h1>Simon Says</h1>
+                <button id="easy" class="button-menu">EASY</button>
+                <button id="hard" class="button-menu">HARD</button>
+            </div>
+        </div>
+        <div class="simon-says center">
+            <div id="position: relative;">
+                <div id="filter">
+                    <span class="score">SCORE:&nbsp;&nbsp;</span>
+                    <span class="score" id="score"> 0</span>
+                </div>
                 <div class="between">
                     <button id="green" class="buttons"></button>
                     <button id="red" class="buttons"></button>
-                </div>
-                <div class="game-box">
-                    <div class="center">
-                        <button id="high-score">0</button>
-                        <button id="start">START</button>
-                        <button id="latest-score">0</button>
-                    </div>
                 </div>
                 <div class="between">
                     <button id="yellow" class="buttons"></button>

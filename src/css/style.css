@@ -1,3 +1,7 @@
+:root {
+    font-size: 16px;
+}
+
 * {
     padding: 0px;
     margin: 0px;
@@ -5,69 +9,113 @@
 
 html,
 body {
-    height: 100vh;
+    color: #2d3436;
+    background-color: #f1f2f6;
+    font-family: "Luckiest Guy", cursive;
+}
+
+h1 {
+    font-size: 3rem;
 }
 
 button {
     cursor: pointer;
 }
 
-#high-score,
-#latest-score {
-    cursor: auto;
+#start-screen {
+    background-color: #f1f2f6;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
 }
 
-.game-box {
-    background: black;
+#filter {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 3rem;
+    transform-origin: center;
+    background-color: #f1f2f6;
+    transform: translate(-50%, -50%);
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
-    width: 300px;
-    height: 300px;
+    z-index: 1;
+}
+
+#green {
+    background-color: #2ecc71;
+    border-radius: 100% 0 0 0;
+}
+
+#red {
+    background-color: #e74c3c;
+    border-radius: 0 100% 0 0;
+}
+
+#yellow {
+    background-color: #f1c40f;
+    border-radius: 0 0 0 100%;
+}
+
+#blue {
+    background-color: #3498db;
+    border-radius: 0 0 100% 0;
+}
+
+#easy:hover {
+    color: #009432;
+}
+
+#hard:hover {
+    color: #e84118;
+}
+
+.simon-says {
+    height: 100vh;
+}
+
+.button-menu {
+    transition: color 0.5s ease-in-out;
+    border: none;
+    display: block;
+    margin-top: 1rem;
+    color: #2d3436;
+    margin-left: auto;
+    font-size: 1.5rem;
+    margin-right: auto;
+    transform: rotateZ(-2deg);
+    background-color: transparent;
+    font-family: "Luckiest Guy", cursive;
+}
+
+.score {
+    font-size: 2rem;
 }
 
 .buttons {
-    border: 10px solid black;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    outline: 0;
+    width: 8rem;
+    height: 8rem;
+    border: none;
+    transition: 0.2s filter ease-in-out;
+}
+
+.buttons:hover {
+    filter: opacity(80%);
 }
 
 .center {
     display: flex;
-    height: 100%;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .between {
     display: flex;
     justify-content: space-between;
-}
-
-#start {
-    background-color: red;
-}
-
-#start,
-#high-score,
-#latest-score {
-    padding: 2px;
-    margin: 0px 2px;
-    border-radius: 1px;
-    font-family: "Orbitron";
-}
-
-#red {
-    background-color: #e74c3c;
-}
-
-#blue {
-    background-color: #3498db;
-}
-
-#green {
-    background-color: #2ecc71;
-}
-
-#yellow {
-    background-color: #f1c40f;
 }
