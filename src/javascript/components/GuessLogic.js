@@ -1,5 +1,6 @@
 import {
     SCORE,
+    BUTTONS,
     GLOBAL_DATA,
     BUTTONS_SIZE,
     addPoint,
@@ -9,7 +10,7 @@ import {
     clearPlayerGuesses,
 } from "./Constant";
 import { gameOver, showcaseSequence } from "./Simon";
-import { userFlash } from "./Buttons";
+import { userFlash, unRegister } from "./Buttons";
 
 const guess = (color) => {
     switch (color) {
