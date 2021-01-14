@@ -1,19 +1,15 @@
 import {
-    SAME_LENGTH,
-    GET_BUTTONS,
-    BUTTONS_SIZE,
-    GENERATE_GUESS,
-    ADD_SIMON_GUESS,
-    ADD_PLAYER_GUESS,
-    GET_SIMON_GUESSES,
-    GET_PLAYER_GUESSES,
-    CLEAR_PLAYER_GUESSES,
+    SCORE,
     GLOBAL_DATA,
-    FLASH_DELAY,
-    SPEED_UP,
+    BUTTONS_SIZE,
+    addPoint,
+    addSimon,
+    addPlayer,
+    generateGuess,
+    clearPlayerGuesses,
 } from "./Constant";
 import { gameOver, showcaseSequence } from "./Simon";
-import { flash } from "./Buttons";
+import { userFlash } from "./Buttons";
 
 const guess = (color) => {
     switch (color) {
@@ -30,12 +26,15 @@ const guess = (color) => {
     }
 };
 
-const nextRound = (simon, player) => {
-    if (SAME_LENGTH(simon, player) && checkPlayerSequence(simon, player)) {
-        GLOBAL_DATA.score.innerText = ++GLOBAL_DATA.points;
-        ADD_SIMON_GUESS(GENERATE_GUESS(BUTTONS_SIZE));
-        showcaseSequence(GET_SIMON_GUESSES(), GET_BUTTONS());
-        CLEAR_PLAYER_GUESSES();
+const sameLength = (simon, player) => simon.length === player.length;
+
+const nextRound = () => {
+    const { simon, player } = GLOBAL_DATA;
+    if (sameLength(simon, player) && checkPlayerSequence(simon, player)) {
+        SCORE.innerText = addPoint();
+        clearPlayerGuesses();
+        addSimon(generateGuess(BUTTONS_SIZE));
+        showcaseSequence();
     } else if (!checkPlayerSequence(simon, player)) {
         gameOver();
     }
@@ -50,18 +49,9 @@ const checkPlayerSequence = (simon, player) => {
     return true;
 };
 
-const timeToGuess = (callback, time) => {
-    const guessID = setTimeout(callback, time);
-    return guessID;
-};
-
 export const addSequence = (event) => {
     const index = guess(event.target.id);
-    const buttons = GET_BUTTONS();
-    const sequence = [];
-    ADD_PLAYER_GUESS(index);
-    sequence.push(flash(index, buttons[index], 0, "opacity(40%)"));
-    Promise.all(sequence).then(() => {
-        nextRound(GET_SIMON_GUESSES(), GET_PLAYER_GUESSES());
-    });
+    addPlayer(index);
+    userFlash(index);
+    nextRound();
 };

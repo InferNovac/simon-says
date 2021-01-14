@@ -20,51 +20,54 @@ h1 {
 
 button {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #start-screen {
-    background-color: #f1f2f6;
-    position: absolute;
+    z-index: 2;
     width: 100vw;
     height: 100vh;
-    z-index: 2;
+    position: absolute;
+    background-color: #f1f2f6;
 }
 
-#filter {
-    top: 50%;
-    left: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    font-size: 3rem;
-    transform-origin: center;
-    background-color: #f1f2f6;
-    transform: translate(-50%, -50%);
-    width: 12rem;
-    height: 12rem;
-    border-radius: 50%;
+#score-table {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 1;
+    margin: auto;
+    width: 12rem;
+    display: flex;
+    height: 12rem;
+    font-size: 3rem;
+    position: absolute;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: #f1f2f6;
+    box-shadow: 0px 0px 60px 0px rgba(245, 246, 250, 0.4);
 }
 
 #green {
-    background-color: #2ecc71;
     border-radius: 100% 0 0 0;
+    background-color: #2ecc71;
 }
 
 #red {
-    background-color: #e74c3c;
     border-radius: 0 100% 0 0;
+    background-color: #e74c3c;
 }
 
 #yellow {
-    background-color: #f1c40f;
     border-radius: 0 0 0 100%;
+    background-color: #f1c40f;
 }
 
 #blue {
-    background-color: #3498db;
     border-radius: 0 0 100% 0;
+    background-color: #3498db;
 }
 
 #easy:hover {
@@ -80,7 +83,6 @@ button {
 }
 
 .button-menu {
-    transition: color 0.5s ease-in-out;
     border: none;
     display: block;
     margin-top: 1rem;
@@ -90,6 +92,8 @@ button {
     margin-right: auto;
     transform: rotateZ(-2deg);
     background-color: transparent;
+    -webkit-transform: rotateZ(-2deg);
+    transition: color 0.5s ease-in-out;
     font-family: "Luckiest Guy", cursive;
 }
 

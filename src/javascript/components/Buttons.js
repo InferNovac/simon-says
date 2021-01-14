@@ -1,4 +1,4 @@
-import { GLOBAL_DATA } from "./Constant";
+import { SOUNDS } from "./Constant";
 
 export const register = (buttons, event) => {
     for (const button of buttons) {
@@ -12,17 +12,13 @@ export const unRegister = (buttons, event) => {
     }
 };
 
-export const flash = (index, button, delay, filter) =>
+export const flash = (index, delay) =>
     new Promise((resolve, reject) => {
         setTimeout(() => {
-            const { buttonSounds } = GLOBAL_DATA;
-            buttonSounds[index].addEventListener("play", () => {
-                button.style.filter = filter;
-            });
-
-            buttonSounds[index].addEventListener("ended", () => {
-                button.style.filter = "";
-            });
-            resolve(buttonSounds[index].play());
+            resolve(SOUNDS[index].play());
         }, delay);
     });
+
+export const userFlash = (index) => {
+    SOUNDS[index].play();
+};
