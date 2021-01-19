@@ -1,5 +1,4 @@
-import { BUTTONS, SOUNDS } from "./Constant";
-import { addSequence } from "./GuessLogic";
+import { SOUNDS } from "./Constant";
 
 export const register = (buttons, event) => {
     for (const button of buttons) {

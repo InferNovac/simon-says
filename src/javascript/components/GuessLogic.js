@@ -10,7 +10,7 @@ import {
     clearPlayerGuesses,
 } from "./Constant";
 import { gameOver, showcaseSequence } from "./Simon";
-import { userFlash, unRegister } from "./Buttons";
+import { userFlash } from "./Buttons";
 
 const guess = (color) => {
     switch (color) {

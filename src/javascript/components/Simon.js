@@ -1,7 +1,6 @@
 import {
     SCORE,
     BUTTONS,
-    SIMON_SIZE,
     FLASH_DELAY,
     GLOBAL_DATA,
     BUTTONS_SIZE,

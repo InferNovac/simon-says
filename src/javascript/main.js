@@ -8,7 +8,6 @@ import {
     BUTTONS,
 } from "./components/Constant";
 import { loadGame } from "./components/StartScreen";
-import { addSequence } from "./components/GuessLogic";
 
 for (let index = 0; index < BUTTONS_SIZE; index++) {
     SOUNDS[index].addEventListener("play", () => {
